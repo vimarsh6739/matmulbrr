@@ -1,0 +1,32 @@
+This is the result of a sample run(M1 MacOS):
+
+input size : 128
+finished init:
+naive time : 0.0540581
+cached time : 0.00737095
+transposed time : 0.0290749
+============
+input size : 256
+finished init:
+naive time : 0.424097
+cached time : 0.068279
+transposed time : 0.239176
+============
+input size : 512
+finished init:
+naive time : 4.02172
+cached time : 0.540691
+transposed time : 2.63372
+============
+input size : 1024
+finished init:
+naive time : 75.4347
+cached time : 4.4606
+transposed time : 24.106
+============
+input size : 2048
+finished init:
+naive time : 847.272
+cached time : 37.3052
+transposed time : 206.109
+============

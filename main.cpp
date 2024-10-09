@@ -42,46 +42,46 @@ int main(int argc, char *argv[]) {
     double *b = new double[m * m];
     double *c = new double[m * m];
     std::cout << "input size : " << m << "\n";
-    
-    
+
     for (int i = 0; i < m * m; ++i) {
       a[i] = (i + 1) * 1.0;
       b[i] = a[i];
       c[i] = 0.0;
     }
     std::cout << "finished init:" << std::endl;
-    // bench naive
-    double s1 = get_time();
-    for(int nt=0;nt<NTRIALS;++nt){
-      matmul_naive(a, b, c, m); 
-    } 
-    double e1 = get_time();
-    std::cout << "naive time : " << (e1-s1) <<std::endl;
+    // // bench naive
+    // double s1 = get_time();
+    // for (int nt = 0; nt < NTRIALS; ++nt) {
+    //   matmul_naive(a, b, c, m);
+    // }
+    // double e1 = get_time();
+    // std::cout << "naive time : " << (e1 - s1) << std::endl;
 
     // bench cached
-    
+
     double s2 = get_time();
-    for(int nt=0;nt<NTRIALS;++nt){
-      matmul_cached(a, b, c, m); 
-    } 
+    for (int nt = 0; nt < NTRIALS; ++nt) {
+      matmul_cached(a, b, c, m);
+    }
     double e2 = get_time();
-    std::cout << "cached time : " << (e2-s2) <<std::endl;
+    std::cout << "cached time : " << (e2 - s2) << std::endl;
 
     // bench transposed
 
     double s3 = get_time();
-    for(int nt=0;nt<NTRIALS;++nt){
-     matmul_transposed(a, b, c, m); 
-    } 
+    for (int nt = 0; nt < NTRIALS; ++nt) {
+      matmul_transposed(a, b, c, m);
+    }
     double e3 = get_time();
-    std::cout << "transposed time : " << (e3-s3) <<std::endl;
-
+    std::cout << "transposed time : " << (e3 - s3) << std::endl;
+    std::cout << "============" <<std::endl;
     // delete memory allocated
     delete[] a;
     delete[] b;
     delete[] c;
-    return 0;
   }
+
+  return 0;
 }
 // int main(int argc, char *argv[]) {
 //   std::cout << "benchmark some matmuls here" << std::endl;
